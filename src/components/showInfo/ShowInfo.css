@@ -1,0 +1,62 @@
+.infoContainer {
+  background-color: rgb(246, 246, 248);
+  border-radius: 0px 20px 20px 0px;
+}
+
+.today-highlight-title {
+  padding: 1.1rem;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  padding: 0rem 5rem;
+}
+.card-frame {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 20px 20px 20px 20px;
+  background-color: rgb(255, 255, 255);
+}
+.title {
+  padding: 1.1rem;
+}
+.feels-like-temp,
+.pressure,
+.humidity,
+.wind,
+.wind-deg,
+.visibility,
+.sunrise-and-sunset {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  color: #413f42;
+  /* border: 1px solid; */
+  align-items: center;
+}
+.sunrise-and-sunset {
+  font-size: 2rem;
+}
+.pressure {
+  font-size: 3.5rem;
+}
+.not-applicable-icon {
+  font-size: 5.5rem;
+  color: #413f42;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.wind-speed {
+  font-size: 1.5rem;
+}
+.date-time {
+  font-size: 3rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}

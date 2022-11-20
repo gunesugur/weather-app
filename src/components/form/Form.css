@@ -1,0 +1,63 @@
+.form-section {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.3) 0px 2px 16px 0px;
+  background-color: rgb(9, 21, 62);
+  border-radius: 20px 0px 0px 20px;
+  color: white;
+}
+.form {
+  text-align: center;
+}
+.input-text {
+  padding: 0.3rem;
+  outline: none;
+  border: none;
+  margin: 1rem;
+  width: 75%;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(9, 21, 62);
+  /* background-color: rgb(255, 255, 255); */
+}
+.input-text::placeholder {
+  color: rgb(255, 255, 255, 0.6);
+}
+/* .input-text:hover {
+  box-shadow: rgba(230, 230, 230, 0.1) 0px 4px 16px,
+    rgba(240, 240, 240, 0.1) 0px 8px 24px,
+    rgba(255, 255, 255, 0.1) 0px 16px 56px;
+  transition: ease 0.4s;
+}
+.input-text:focus {
+  box-shadow: rgba(230, 230, 230, 0.1) 0px 4px 16px,
+    rgba(240, 240, 240, 0.1) 0px 8px 24px,
+    rgba(255, 255, 255, 0.1) 0px 16px 56px;
+} */
+.main-temp-text-container {
+  text-align: center;
+  font-size: 2.5rem;
+  background-color: #f7a4a4;
+}
+.temp-text {
+  font-size: 5rem;
+}
+.temp-text-container {
+  text-align: center;
+  background-color: #b6e2a1;
+}
+.weather-icons {
+  text-align: center;
+  background-color: #ba94d1;
+}
+.weather-desc-container {
+  background-color: #febe8c;
+  text-align: center;
+}
+.form-field-not-applicable-icon {
+  color: #fff !important;
+}
+.date-time-container {
+  text-align: center;
+  background-color: #b8e8fc;
+}

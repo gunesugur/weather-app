@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import { WiNa } from "react-icons/wi"
-import { BsSearch } from "react-icons/bs"
+// import { BsSearch } from "react-icons/bs"
 import axios from "axios"
 import "./Form.css"
-export const Form = ({ info, setInfo }) => {
+export const Form = ({ info, setInfo, setCityInfo }) => {
   const [city, setCity] = useState("")
   const [loading, setLoading] = useState(true)
   useEffect(() => {
@@ -20,6 +20,7 @@ export const Form = ({ info, setInfo }) => {
     }
     setCity("")
     setLoading(false)
+    setCityInfo(city)
   }
   const urlIcons = `https://openweathermap.org/img/wn/${
     info && info.weather[0].icon
@@ -73,7 +74,7 @@ export const Form = ({ info, setInfo }) => {
         {info ? (
           <span className="temp-text">
             {Math.round(info.main.temp)}
-            <sup>°C</sup>
+            <sup>°</sup>
           </span>
         ) : (
           <span className="not-applicable-icon form-field-not-applicable-icon">

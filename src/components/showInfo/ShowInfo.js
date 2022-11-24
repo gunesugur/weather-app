@@ -2,8 +2,9 @@ import React from "react"
 import "./ShowInfo.css"
 import { WiNa, WiThermometer, WiHumidity, WiWindDeg } from "react-icons/wi"
 import { TbGauge, TbSunrise, TbSunset } from "react-icons/tb"
+import HourlyWeatherForecast from "../hourlyWeatherForecast/HourlyWeatherForecast"
 
-const ShowInfo = ({ info }) => {
+const ShowInfo = ({ info, cityInfo }) => {
   const getDateTime = (dt) => {
     const unix_timestamp = dt
     const date = new Date(unix_timestamp * 1000)
@@ -125,6 +126,7 @@ const ShowInfo = ({ info }) => {
           )}
         </div>
       </div>
+      <HourlyWeatherForecast cityInfo={cityInfo} />
     </div>
   )
 }

@@ -1,0 +1,17 @@
+.hourly-forecast-card-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem 5rem;
+}
+.max-temp,
+.min-temp {
+  padding: 2px;
+}
+.min-temp {
+  color: grey;
+}
+.hourly-forecast-datetime{
+  margin: 10px;
+}

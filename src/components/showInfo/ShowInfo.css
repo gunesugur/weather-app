@@ -3,7 +3,8 @@
   border-radius: 0px 20px 20px 0px;
 }
 
-.today-highlight-title {
+.today-highlight-title,
+.hourly-forecast-title {
   padding: 1.1rem;
 }
 .card-container {
@@ -34,7 +35,6 @@
   display: flex;
   justify-content: center;
   color: #413f42;
-  /* border: 1px solid; */
   align-items: center;
 }
 .sunrise-and-sunset {

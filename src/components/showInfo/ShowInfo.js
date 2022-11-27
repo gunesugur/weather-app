@@ -1,6 +1,6 @@
 import React from "react"
 import "./ShowInfo.css"
-import { WiNa, WiThermometer, WiHumidity, WiWindDeg } from "react-icons/wi"
+import { WiThermometer, WiHumidity, WiWindDeg } from "react-icons/wi"
 import { TbGauge, TbSunrise, TbSunset } from "react-icons/tb"
 import HourlyWeatherForecast from "../hourlyWeatherForecast/HourlyWeatherForecast"
 
@@ -14,120 +14,81 @@ const ShowInfo = ({ info, cityInfo }) => {
   }
 
   return (
-    <div className="infoContainer">
-      <h3 className="today-highlight-title">Today's Highlight</h3>
-      <div className="card-container">
-        <div className="card-frame">
-          <h4 className="feels-like-temp-title title">Feels Like</h4>
-          {info ? (
-            <span className="feels-like-temp">
-              {Math.round(info.main.feels_like)}{" "}
-              <span>
-                <WiThermometer />
+    <>
+      {info && (
+        <div className="infoContainer">
+          <h3 className="today-highlight-title">Today's Highlight</h3>
+          <div className="card-container">
+            <div className="card-frame ">
+              <h4 className="feels-like-temp-title title">Feels Like</h4>
+              <span className="feels-like-temp">
+                {Math.round(info.main.feels_like)}
+                <span className="show-info-icons">
+                  <WiThermometer />
+                </span>
               </span>
-            </span>
-          ) : (
-            <span className="not-applicable-icon">
-              <WiNa />
-            </span>
-          )}
-        </div>
-        <div className="card-frame">
-          <h4 className="pressure-title title">Pressure</h4>
-          {info ? (
-            <span className="pressure">
-              {info.main.pressure}{" "}
-              <span>
-                <TbGauge />
+            </div>
+            <div className="card-frame">
+              <h4 className="pressure-title title">Pressure</h4>
+              <span className="pressure">
+                {info.main.pressure}
+                <span className="show-info-icons">
+                  <TbGauge />
+                </span>
               </span>
-            </span>
-          ) : (
-            <span className="not-applicable-icon">
-              <WiNa />
-            </span>
-          )}
-        </div>
-        <div className="card-frame">
-          <h4 className="humidity-title title">Humidity</h4>
-          {info ? (
-            <span className="humidity">
-              {info.main.humidity}{" "}
-              <span>
-                <WiHumidity />
+            </div>
+            <div className="card-frame">
+              <h4 className="humidity-title title">Humidity</h4>
+
+              <span className="humidity">
+                {info.main.humidity}
+                <span className="show-info-icons">
+                  <WiHumidity />
+                </span>
               </span>
-            </span>
-          ) : (
-            <span className="not-applicable-icon">
-              <WiNa />
-            </span>
-          )}
-        </div>
-        <div className="card-frame">
-          <h4 className="wind-title title">Wind Status</h4>
-          {info ? (
-            <span className="wind">
-              {info.wind.speed}
-              <span className="wind-speed">km/h</span>
-            </span>
-          ) : (
-            <span className="not-applicable-icon">
-              <WiNa />
-            </span>
-          )}
-        </div>
-        <div className="card-frame">
-          <h4 className="wind-deg-title title">Wind Deg</h4>
-          {info ? (
-            <span className="wind-deg">
-              {info.wind.deg}{" "}
-              <span>
-                <WiWindDeg />
+            </div>
+            <div className="card-frame">
+              <h4 className="wind-title title">Wind Status</h4>
+
+              <span className="wind">
+                {info.wind.speed}
+                <span className="wind-speed">km/h</span>
               </span>
-            </span>
-          ) : (
-            <span className="not-applicable-icon">
-              <WiNa />
-            </span>
-          )}
-        </div>
-        <div className="card-frame">
-          <h4 className="sunrise-sunset-title title">Sunrise & Sunset</h4>
-          {info ? (
-            <div>
-              {info ? (
+            </div>
+            <div className="card-frame">
+              <h4 className="wind-deg-title title">Wind Deg</h4>
+
+              <span className="wind-deg">
+                {info.wind.deg}
+                <span>
+                  <WiWindDeg className="show-info-icons" />
+                </span>
+              </span>
+            </div>
+            <div className="card-frame">
+              <h4 className="sunrise-sunset-title title">Sunrise & Sunset</h4>
+
+              <div>
                 <span className="sunrise-and-sunset">
                   {getDateTime(info.sys.sunrise)}
                   <span>
-                    <TbSunrise />
+                    <TbSunrise className="show-info-icons" />
                   </span>
                 </span>
-              ) : (
-                <span className="not-applicable-icon">
-                  <WiNa />
-                </span>
-              )}
-              {info ? (
+
                 <span className="sunrise-and-sunset">
                   {getDateTime(info.sys.sunset)}
                   <span>
-                    <TbSunset />
+                    <TbSunset className="show-info-icons" />
                   </span>
                 </span>
-              ) : (
-                <span className="not-applicable-icon">
-                  <WiNa />
-                </span>
-              )}
+              </div>
             </div>
-          ) : (
-            <span className="not-applicable-icon">
-              <WiNa />
-            </span>
-          )}
+          </div>
+          <HourlyWeatherForecast cityInfo={cityInfo} />
         </div>
-      </div>
-      <HourlyWeatherForecast cityInfo={cityInfo} />
-    </div>
+      )}
+    </>
   )
 }
 

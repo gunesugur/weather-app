@@ -1,10 +1,8 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import "./HourlyWeatherForecast.css"
-import { WiNa } from "react-icons/wi"
 const HourlyWeatherForecast = ({ info, cityInfo }) => {
   const [forecast, setForecast] = useState()
-  const [loading, setLoading] = useState(true)
   useEffect(() => {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY
     axios
@@ -12,7 +10,6 @@ const HourlyWeatherForecast = ({ info, cityInfo }) => {
         `https://api.openweathermap.org/data/2.5/forecast?q=${cityInfo}&appid=${apiKey}&units=metric`
       )
       .then((data) => setForecast(data.data.list))
-    setLoading(false)
   }, [cityInfo])
   console.log(forecast)
   const getDateTime = (dt) => {
@@ -28,13 +25,15 @@ const HourlyWeatherForecast = ({ info, cityInfo }) => {
       <div className="hourly-forecast-card-container">
         {forecast?.slice(0, 8).map((item, id) => (
           <div className="card-frame hourly-card-frame" key={id}>
-            <span className="hourly-forecast-datetime">{getDateTime(item.dt)}</span>
-            <img
-              src={`https://openweathermap.org/img/wn/${
-                forecast && item.weather[0].icon
-              }@2x.png`}
-              alt="url-icons"
-            />
+            <p className="hourly-forecast-datetime">{getDateTime(item.dt)}</p>
+            <div>
+              <img
+                src={`https://openweathermap.org/img/wn/${
+                  forecast && item.weather[0].icon
+                }@2x.png`}
+                alt="url-icons"
+              />
+            </div>
             <span className="max-temp">{Math.round(item.main.temp_max)}°</span>
             <span className="min-temp">{Math.round(item.main.temp_min)}°</span>
           </div>

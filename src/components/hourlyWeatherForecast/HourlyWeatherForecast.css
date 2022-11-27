@@ -4,6 +4,13 @@
   text-align: center;
   gap: 1rem;
   padding: 1rem 5rem;
+  /* display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 5rem; */
 }
 .max-temp,
 .min-temp {
@@ -12,6 +19,15 @@
 .min-temp {
   color: grey;
 }
-.hourly-forecast-datetime{
+.hourly-forecast-datetime {
   margin: 10px;
+  display: inline-block;
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .hourly-forecast-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }

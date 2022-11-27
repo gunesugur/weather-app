@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react"
-import { WiNa } from "react-icons/wi"
-// import { BsSearch } from "react-icons/bs"
 import axios from "axios"
 import "./Form.css"
 export const Form = ({ info, setInfo, setCityInfo }) => {
   const [city, setCity] = useState("")
-  const [loading, setLoading] = useState(true)
   useEffect(() => {
     console.log(city)
   }, [city])
@@ -19,17 +16,8 @@ export const Form = ({ info, setInfo, setCityInfo }) => {
       console.log(error)
     }
     setCity("")
-    setLoading(false)
     setCityInfo(city)
   }
-  const urlIcons = `https://openweathermap.org/img/wn/${
-    info && info.weather[0].icon
-  }@4x.png`
-  const unix_timestamp = info && info.dt
-  const date = new Date(unix_timestamp * 1000)
-  const hours = "0" + date.getHours()
-  const minutes = "0" + date.getMinutes()
-  const dateTime = hours.substr(-2) + ":" + minutes.substr(-2)
   return (
     <div className="form-section">
       <form
@@ -39,7 +27,7 @@ export const Form = ({ info, setInfo, setCityInfo }) => {
           handleChange()
         }}
       >
-        <div className="search-icon-container form">
+        <div>
           <input
             type="text"
             value={city}
@@ -50,56 +38,6 @@ export const Form = ({ info, setInfo, setCityInfo }) => {
           />
         </div>
       </form>
-      <div className="weather-icons">
-        {loading ? (
-          <span className="not-applicable-icon form-field-not-applicable-icon">
-            <WiNa />
-          </span>
-        ) : (
-          <img src={urlIcons} alt="weather-icons" />
-        )}
-      </div>
-      <div className="main-temp-text-container">
-        {info ? (
-          <span>
-            {info.name},{info.sys.country}
-          </span>
-        ) : (
-          <span className="not-applicable-icon form-field-not-applicable-icon">
-            <WiNa />
-          </span>
-        )}
-      </div>
-      <div className="temp-text-container">
-        {info ? (
-          <span className="temp-text">
-            {Math.round(info.main.temp)}
-            <sup>°</sup>
-          </span>
-        ) : (
-          <span className="not-applicable-icon form-field-not-applicable-icon">
-            <WiNa />
-          </span>
-        )}
-      </div>
-      <div className="date-time-container">
-        {info ? (
-          <span className="date-time">{dateTime}</span>
-        ) : (
-          <span className="not-applicable-icon form-field-not-applicable-icon">
-            <WiNa />
-          </span>
-        )}
-      </div>
-      <div className="weather-desc-container">
-        {info ? (
-          <span className="weather-desc">{info.weather[0].description}</span>
-        ) : (
-          <span className="not-applicable-icon form-field-not-applicable-icon">
-            <WiNa />
-          </span>
-        )}
-      </div>
     </div>
   )
 }

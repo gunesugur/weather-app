@@ -1,0 +1,36 @@
+.main-info-container {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.3) 0px 2px 16px 0px;
+  background-color: rgb(9, 21, 62);
+  border-radius: 20px 20px 0px 0px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.main-temp-text-container {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.temp-text {
+  font-size: 5rem;
+}
+.temp-text-container {
+  text-align: center;
+}
+.weather-icons {
+  text-align: center;
+}
+.weather-desc-container {
+  text-align: center;
+}
+.date-time-container {
+  text-align: center;
+}
+.date-time {
+  font-size: 3rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}

@@ -14,26 +14,27 @@ const MainInfo = ({ info }) => {
     <>
       {info && (
         <div className="main-info-container">
-          <div className="weather-icons">
+          <span className="country-code">
+            {info.name},{info.sys.country}
+          </span>
+          <div className="weather-icon-temp-desc">
             <img src={urlIcons} alt="weather-icons" />
+            <div className="temp-desc">
+              <span className="temp-text">
+                {Math.round(info.main.temp)}
+                <sup>°</sup>
+              </span>
+              <span className="weather-desc">
+                {info.weather[0].description}
+              </span>
+            </div>
           </div>
-          <div className="main-temp-text-container">
-            <span>
-              {info.name},{info.sys.country}
-            </span>
-          </div>
-          <div className="temp-text-container">
-            <span className="temp-text">
-              {Math.round(info.main.temp)}
-              <sup>°</sup>
-            </span>
-          </div>
-          <div className="date-time-container">
+          {/* <div className="date-time-container"> */}
             <span className="date-time">{dateTime}</span>
-          </div>
-          <div className="weather-desc-container">
+          {/* </div> */}
+          {/* <div className="weather-desc-container">
             <span className="weather-desc">{info.weather[0].description}</span>
-          </div>
+          </div> */}
         </div>
       )}
     </>

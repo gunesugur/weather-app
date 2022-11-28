@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./App.css"
 import MainInfo from "./components/mainInfo/MainInfo"
-import ShowInfo from "./components/showInfo/ShowInfo"
+import ShowDetail from "./components/showDetail/ShowDetail"
 import Form from "./components/form/Form"
 function App() {
   const [info, setInfo] = useState()
@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <Form info={info} setInfo={setInfo} setCityInfo={setCityInfo} />
-      <div className="info-field-container">
+      <div className="info-field">
         <MainInfo info={info} />
-        <ShowInfo info={info} cityInfo={cityInfo} />
+        <ShowDetail info={info} cityInfo={cityInfo} />
       </div>
       <br />
       <br />

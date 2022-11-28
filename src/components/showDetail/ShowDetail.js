@@ -1,10 +1,10 @@
 import React from "react"
-import "./ShowInfo.css"
+import "./ShowDetail.css"
 import { WiThermometer, WiHumidity, WiWindDeg } from "react-icons/wi"
 import { TbGauge, TbSunrise, TbSunset } from "react-icons/tb"
 import HourlyWeatherForecast from "../hourlyWeatherForecast/HourlyWeatherForecast"
 
-const ShowInfo = ({ info, cityInfo }) => {
+const ShowDetail = ({ info, cityInfo }) => {
   const getDateTime = (dt) => {
     const unix_timestamp = dt
     const date = new Date(unix_timestamp * 1000)
@@ -92,4 +92,4 @@ const ShowInfo = ({ info, cityInfo }) => {
   )
 }
 
-export default ShowInfo
+export default ShowDetail
